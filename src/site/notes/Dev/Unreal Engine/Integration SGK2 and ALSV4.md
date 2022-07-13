@@ -3,7 +3,7 @@
 ---
 
 # Integrating SGK2 with ALSV4
-Well I took all the steps I used to integrate this 2 system within a project I'm doing, hope this helps someone :) The SGK you can find in the Unreal Market, the ALS is in the link bellow.
+Well I took all the steps I used to integrate this 2 systems within a project I'm doing, hope this helps someone :) The SGK you can find in the Unreal Market, the ALS is in the link bellow.
 
 ALSv4 Replicated with Blueprints: [https://github.com/Cesio137/ALSReplicated](https://draft.blogger.com/blog/post/edit/5343305929236502146/8530715374074848082#)
 
