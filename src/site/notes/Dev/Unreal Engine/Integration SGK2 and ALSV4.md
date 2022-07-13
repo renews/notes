@@ -1,11 +1,13 @@
 ---
-{"dg-publish":true,"dg-permalink":"tutorials/2022/integrating-sgkv2-with-alsv4","permalink":"/tutorials/2022/integrating-sgkv2-with-alsv4/","dgHomeLink":true,"dgPassFrontmatter":false}
+{"dg-publish":true,"dg-permalink":"dev/unreal-engine/integrating-sgkv2-with-alsv4","permalink":"/dev/unreal-engine/integrating-sgkv2-with-alsv4/","dgHomeLink":true,"dgPassFrontmatter":false}
 ---
 
 # Integrating SGK2 with ALSV4
 Well I took all the steps I used to integrate this 2 system within a project I'm doing, hope this helps someone :) The SGK you can find in the Unreal Market, the ALS is in the link bellow.
 
 ALSv4 Replicated with Blueprints: [https://github.com/Cesio137/ALSReplicated](https://draft.blogger.com/blog/post/edit/5343305929236502146/8530715374074848082#)
+
+I have place links to images you can use as reference if you feel lost at a especific point :)
 
 Let's go!
 
@@ -52,13 +54,13 @@ Let's go!
 	9. Open the ALS_AnimBP AnimGraph (double click)
 		1. Next to the Output Pose, right click type cache and click on the option ***new saved cache pose*** [Image for reference](https://i.imgur.com/iIq0kjg.png)
 		2. Drag from the use cached pose AlsCache -> Type Slot, and change the slot to **UpperBodyPostAO** [Image for reference](https://i.imgur.com/qMAh5co.png) / details: [Image for reference](https://i.imgur.com/j9C8gZp.png)
-		3. Use the cache created and move your output pose as such: https://i.imgur.com/UDuOxa1.png
-		4. Configure your Layered blend per bone as such: https://i.imgur.com/6Ul7ThM.png
+		3. Use the cache created and move your output pose as such: [Image for reference](https://i.imgur.com/UDuOxa1.png)
+		4. Configure your Layered blend per bone as such: [Image for reference](https://i.imgur.com/6Ul7ThM.png)
 
 6. Open ***BP_MasterHoldable*** (SGKv2 Folder -> Blueprints -> Items -> HoldableItems )
 	1. Create a variable in the stance category, named ***AlsOverlay*** must be be the type ***ALS Overlay State***
 
-7. Now edit the bp of your holdable items to match the similar item from ALS (SGKv2 Folder -> Blueprints -> Items -> HoldableItems) https://i.imgur.com/hiSQwj0.png
+7. Now edit the bp of your holdable items to match the similar item from ALS (SGKv2 Folder -> Blueprints -> Items -> HoldableItems) [Image for reference](https://i.imgur.com/hiSQwj0.png)
 	1. Double click one of the BP on the folder listed above
 	2. Search for ***als over***
 	3. Select the type according to the item you on, compile and save
@@ -68,28 +70,28 @@ Let's go!
 
 8. **On ALS_Base_CharacterBP** (ALS Folder -> Blueprints -> CharacterLogic -> ALS_Base_CharacterBP)
 	1. Double click ReplicatedGraph
-		1. Create a Custom Event "Server Set Overlay State" https://i.imgur.com/OPfpZiw.png
-		2. Create another Custom Event "Multicast Overlay State" https://i.imgur.com/Sx4Eprb.png
-		3. Connect them as https://i.imgur.com/ZIg2FaA.png
+		1. Create a Custom Event "Server Set Overlay State" [Image for reference](https://i.imgur.com/OPfpZiw.png)
+		2. Create another Custom Event "Multicast Overlay State" [Image for reference](https://i.imgur.com/Sx4Eprb.png)
+		3. Connect them as [Image for reference](https://i.imgur.com/ZIg2FaA.png)
 		4. ATTENTION FOR THE CUSTOM EVENT DETAILS!
 
 9. **On BP_PlayerInventory**
 	1. Create 2 Macros inside ALS Category to make it easier to find
 		1. EquipAlsOverlay: 
-		   Everything: https://i.imgur.com/Ja29cpH.png
-		   Input params: https://i.imgur.com/HJ7lj4W.png
+		   Everything: [Image for reference](https://i.imgur.com/Ja29cpH.png)
+		   Input params: [Image for reference](https://i.imgur.com/HJ7lj4W.png)
 		   *To get the state, drag from the input Holdable and type get Als overlay*
-		2. UnEquipAlsOverlay: https://i.imgur.com/VnrlaaI.png
+		2. UnEquipAlsOverlay: [Image for reference](https://i.imgur.com/VnrlaaI.png)
 			
 	2. Double click the Function -> ***UseWeaponFromSlot***
 		1. Go to comment group: "Play unequip montage, in no animation finish unequip"
 			1. Disconnect the node ***Find Montage*** from the node ***NewHoldingItem***
-			2. On the node ***NewHoldingItem*** call our macro ***UnequipAlsOverlay*** and connect it to the node ***Find Montage*** as follows: https://i.imgur.com/tI2N6dv.png
+			2. On the node ***NewHoldingItem*** call our macro ***UnequipAlsOverlay*** and connect it to the node ***Find Montage*** as follows: [Image for reference](https://i.imgur.com/tI2N6dv.png)
 		2. Go to comment group: "If valid set new holding" 
-			1. Place our macro ***EquipAlsOverlay*** at the end: https://i.imgur.com/zEML7GF.png
+			1. Place our macro ***EquipAlsOverlay*** at the end: [Image for reference](https://i.imgur.com/zEML7GF.png)
 		3. Got to comment group: "Play equip montage, if none then finish equip"
 			1. Disconnect the node ***Find Montage*** from the node ***New Holding Weapon Slot***
-			2. Connect the node ***New Holding Weapon Slot***  to the node ***FindMontage*** as follows: https://i.imgur.com/Xd5lh2F.png
+			2. Connect the node ***New Holding Weapon Slot***  to the node ***FindMontage*** as follows: [Image for reference](https://i.imgur.com/Xd5lh2F.png)
 	
 	3. Go to the function ***UnHoldItem***
 		1. Got to the comment group: "If master range weapon exit aimed and reset fov then play unequip montage"
