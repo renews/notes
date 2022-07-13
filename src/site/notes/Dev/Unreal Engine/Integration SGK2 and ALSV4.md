@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-permalink":"dev/unreal-engine/integrating-sgkv2-with-alsv4","permalink":"/dev/unreal-engine/integrating-sgkv2-with-alsv4/","dgHomeLink":true,"dgPassFrontmatter":false}
+{"dg-publish":true,"dg-permalink":"tutorials/unreal-engine/integrating-sgkv2-with-alsv4","permalink":"/tutorials/unreal-engine/integrating-sgkv2-with-alsv4/","dgHomeLink":true,"dgPassFrontmatter":false}
 ---
 
 # Integrating SGK2 with ALSV4
