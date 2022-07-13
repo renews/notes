@@ -36,7 +36,7 @@ Let's go!
 		4. SelectAnims
 
 	5. **Event Graph**
-		1.  Add a new graph clicking on the + icon, name it SGK https://i.imgur.com/YVWmzep.png
+		1.  Add a new graph clicking on the + icon, name it SGK [Image for reference](https://i.imgur.com/YVWmzep.png)
 		2.  Copy everything inside event graph to this new graph
 	
 	6. Interfaces again
@@ -50,8 +50,8 @@ Let's go!
 	8. Compile
 
 	9. Open the ALS_AnimBP AnimGraph (double click)
-		1. Next to the Output Pose, right click type cache and click on the option ***new saved cache pose*** https://i.imgur.com/iIq0kjg.png
-		2. Drag from the use cached pose AlsCache -> Type Slot, and change the slot to **UpperBodyPostAO** https://i.imgur.com/qMAh5co.png / details: https://i.imgur.com/j9C8gZp.png
+		1. Next to the Output Pose, right click type cache and click on the option ***new saved cache pose*** [Image for reference](https://i.imgur.com/iIq0kjg.png)
+		2. Drag from the use cached pose AlsCache -> Type Slot, and change the slot to **UpperBodyPostAO** [Image for reference](https://i.imgur.com/qMAh5co.png) / details: [Image for reference](https://i.imgur.com/j9C8gZp.png)
 		3. Use the cache created and move your output pose as such: https://i.imgur.com/UDuOxa1.png
 		4. Configure your Layered blend per bone as such: https://i.imgur.com/6Ul7ThM.png
 
